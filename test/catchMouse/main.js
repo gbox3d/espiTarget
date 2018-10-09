@@ -13,8 +13,8 @@ let mainWindow
 
 function createWindow () {
   // Create the browser window.
-  //mainWindow = new BrowserWindow({width: 1024, height: 768,fullscreen:true,kiosk:true})
-  mainWindow = new BrowserWindow({width: 1024, height: 768})
+  mainWindow = new BrowserWindow({width: 1024, height: 768,fullscreen:true,frame:false})
+  //mainWindow = new BrowserWindow({width: 1024, height: 768})
 
   //mainWindow.setFullScreen(true)
   //mainWindow.setKiosk(false)
@@ -40,8 +40,8 @@ function createWindow () {
   // mainWindow.on('show', function () {
   //   mainWindow.setFullScreen(true);
   // })
-
-  mainWindow.setFullScreen(true);
+  //mainWindow.setFullScreen(true);
+  //mainWindow.setMenu(null)
 
 
 }
