@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "hello": "npx electron ./test/hello",
-    "cm": "npx electron ./test/catchMouse"
+    "cm": "npx electron ./test/catchMouse",
+    "cmdbg": "npx electron --debug ./test/catchMouse"
   },
   "keywords": [
     "electron",

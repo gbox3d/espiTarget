@@ -1,4 +1,5 @@
 const electron = require('electron')
+const process = require('process')
 // Module to control application life.
 const app = electron.app
 // Module to create native browser window.
@@ -13,7 +14,16 @@ let mainWindow
 
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 1024, height: 768,fullscreen:true,frame:false})
+
+  //console.log(process.argv)
+
+  if(process.argv[1] == '--debug') {
+    mainWindow = new BrowserWindow({width: 1024, height: 768})
+  }
+  else {
+    mainWindow = new BrowserWindow({width: 1024, height: 768,fullscreen:true,frame:false})
+  }
+
   //mainWindow = new BrowserWindow({width: 1024, height: 768})
 
   //mainWindow.setFullScreen(true)

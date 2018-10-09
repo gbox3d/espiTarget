@@ -4,9 +4,7 @@
   "description": "mouse point catcher  by topdown lee",
 
   "main": "main.js",
-  "scripts": {
-    "mac": "npx electron ."
-  },
+
   "author": "topdown lee",
   "license": "ISC"
 }
