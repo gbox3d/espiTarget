@@ -1,0 +1,20 @@
+{
+  "name": "espytarget",
+  "version": "1.0.0",
+  "description": "touch screen target project in Infantry R&D dept",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "hello": "npx electron ./test/hello",
+    "cm": "npx electron ./test/catchMouse"
+  },
+  "keywords": [
+    "electron",
+    "raspberry"
+  ],
+  "author": "gbox3d",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^2.0.11"
+  }
+}

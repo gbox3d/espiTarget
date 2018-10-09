@@ -1,0 +1,12 @@
+{
+  "name": "tutorial",
+  "version": "1.0.0",
+  "description": "electron tutorial by topdown lee",
+
+  "main": "main.js",
+  "scripts": {
+    "mac": "npx electron ."
+  },
+  "author": "topdown lee",
+  "license": "ISC"
+}
