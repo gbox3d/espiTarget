@@ -7,12 +7,30 @@ function AppMain() {
   let _output = document.querySelector('#output')
   let _marker = document.querySelector('#marker')
 
+  function _cvtTouch(x,y,rot90)
+  {
+    if(rot90) {
+      let _y = (1920 - x) * (1080 / 1920)
+      let _x = y * (1920 / 1080)
+
+      return {x:_x,y:_y}
+
+    }
+    else {
+      return {x:x,y:y}
+    }
+
+  }
+
 
   document.addEventListener('mousedown',function (evt) {
 
     _output.innerHTML = 'mouse down(' + evt.clientX + ',' + evt.clientY  +')'
 
-    _marker.style.transform = "translate("+ (evt.clientX -16) +"px, "+ (evt.clientY-16) +"px)"
+
+    let mpos = _cvtTouch((evt.clientX -16),(evt.clientY-16),true);
+
+    _marker.style.transform = "translate("+ mpos.x+"px, "+ mpos.y +"px)"
     console.log(evt);
 
   })
@@ -21,7 +39,11 @@ function AppMain() {
 
     _output.innerHTML = 'mouse up(' + evt.clientX + ',' + evt.clientY  +')'
 
-    _marker.style.transform = "translate("+ (evt.clientX -16) +"px, "+ (evt.clientY-16) +"px)"
+    let mpos = _cvtTouch((evt.clientX -16),(evt.clientY-16),true);
+
+    //_marker.style.transform = "translate("+ (evt.clientX -16) +"px, "+ (evt.clientY-16) +"px)"
+    _marker.style.transform = "translate("+ mpos.x+"px, "+ mpos.y +"px)"
+
     console.log(evt);
 
   })
