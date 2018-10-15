@@ -18,10 +18,10 @@ function createWindow () {
   //console.log(process.argv)
 
   if(process.argv[1] == '--debug') {
-    mainWindow = new BrowserWindow({width: 1024, height: 768})
+    mainWindow = new BrowserWindow({width: 1080/2, height: 1920/2})
   }
   else {
-    mainWindow = new BrowserWindow({width: 1024, height: 768,fullscreen:true,frame:false})
+    mainWindow = new BrowserWindow({width: 1080, height: 1920,fullscreen:true,frame:false})
   }
 
   //mainWindow = new BrowserWindow({width: 1024, height: 768})
