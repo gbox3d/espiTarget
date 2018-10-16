@@ -3,6 +3,9 @@ const remote = electron.remote
 
 const THREE = require('three')
 
+require('../../libs/elvis5/ext/Projector')
+require('../../libs/elvis5/ext/canvasRenderer')
+
 const elvis3d = require('../../libs/elvis5/core')
 
 function AppMain() {
@@ -20,7 +23,7 @@ function AppMain() {
 
     },
     renderer : {
-      type : 'webgl',
+      type : 'canvas',
       clear : {
         color : 0xafab96,
         alpha : 1

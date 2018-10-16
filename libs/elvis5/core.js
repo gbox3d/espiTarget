@@ -20,6 +20,7 @@ util.createDummy 함수에서 기본 랜더러를 webgl로 수정
 
 
 
+
 elvis5 = {
     REVISION : 'r04',
     Renderer : {},
@@ -192,7 +193,29 @@ elvis5.scene.SceneManager = function(param) {
 
             break;
         case 'canvas':
-          this.renderer = new THREE.CanvasRenderer();
+          //this.renderer = new THREE.CanvasRenderer();
+
+          param.renderer.antialias = param.renderer.antialias == undefined ? false : param.renderer.antialias
+
+          this.renderer = new THREE.CanvasRenderer(
+            {
+              antialias: param.renderer.antialias,
+              preserveDrawingBuffer : param.renderer.preserveDrawingBuffer  || false,
+              canvas   : param.renderer.canvas,
+              precision: param.renderer.precision,
+              premultipliedAlpha : param.renderer.premultipliedAlpha || true,
+              alpha: param.renderer.alpha || true,
+              maxLights:param.renderer.maxLight || 4,
+              stencil: param.renderer.stencil || true
+            }
+          );
+
+          if( param.renderer.clear != undefined) {
+            this.renderer.setClearColor(
+              param.renderer.clear.color,
+              param.renderer.clear.alpha
+            );
+          }
 
             break;
         case 'webgl':
