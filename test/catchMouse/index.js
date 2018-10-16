@@ -43,7 +43,7 @@ function AppMain() {
 
     let mpos = _cvtTouch((evt.clientX -16),(evt.clientY-16),false);
 
-    _marker.style.transform = "translate("+ mpos.x+"px, "+ mpos.y +"px)"
+    _marker.style.transform = "translate("+ mpos.x + "px, " + mpos.y +"px)"
     console.log(evt);
 
   })

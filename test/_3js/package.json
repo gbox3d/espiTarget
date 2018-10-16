@@ -1,0 +1,10 @@
+{
+  "name": "catch mouse",
+  "version": "1.0.0",
+  "description": "mouse point catcher  by topdown lee",
+
+  "main": "main.js",
+
+  "author": "topdown lee",
+  "license": "ISC"
+}

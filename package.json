@@ -7,6 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "hello": "npx electron ./test/hello",
     "cm": "npx electron ./test/catchMouse",
+    "cm_rasp": "npx electron --disable-gpu ./test/catchMouse",
+    "test_3js": "npx electron --debug ./test/_3js",
     "cmdbg": "npx electron --debug ./test/catchMouse"
   },
   "keywords": [
@@ -16,6 +18,7 @@
   "author": "gbox3d",
   "license": "ISC",
   "dependencies": {
-    "electron": "^2.0.11"
+    "electron": "^2.0.11",
+    "three": "^0.97.0"
   }
 }
