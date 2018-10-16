@@ -1,10 +1,11 @@
-const electron = require('electron')
-const remote = electron.remote
+// const electron = require('electron')
+// const remote = electron.remote
 
 const THREE = require('three')
 
 require('../../libs/elvis5/ext/Projector')
 require('../../libs/elvis5/ext/canvasRenderer')
+// require('../../libs/elvis5/ext/CSS3DRenderer')
 
 const elvis3d = require('../../libs/elvis5/core')
 
@@ -13,7 +14,14 @@ function AppMain() {
 
   //import * as THREE from 'three';
 
-  let _wb = remote.getCurrentWindow().webContents.getOwnerBrowserWindow().getBounds()
+  // let _wb = remote.getCurrentWindow().webContents.getOwnerBrowserWindow().getBounds()
+
+  let _wb = {
+    width: window.innerWidth,
+    height: window.innerHeight-4
+  }
+
+
 
   let _Smgr = new  elvis3d.scene.SceneManager({
     camera : {
@@ -32,7 +40,6 @@ function AppMain() {
     window_size : {
       width : _wb.width,
       height: _wb.height
-
     },
     setup : function() {
 
@@ -71,8 +78,8 @@ function AppMain() {
       onMouseUp: function (event) {
         //console.log(event)
 
-        var mx = ( event.clientX / window.innerWidth ) * 2 - 1;
-        var my = - ( event.clientY / window.innerHeight ) * 2 + 1;
+        var mx = ( event.clientX /  this.window_size.width ) * 2 - 1;
+        var my = - ( event.clientY / this.window_size.height ) * 2 + 1;
 
         var vector = new THREE.Vector3( mx, my, 0.5 ).unproject( this.camera );
 
