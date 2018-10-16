@@ -9,7 +9,7 @@
     "cm": "npx electron ./test/catchMouse",
     "cm_rasp": "npx electron --disable-gpu ./test/catchMouse",
     "test_3js": "npx electron --debug ./test/_3js",
-    "test_3js2": "npx electron  ./test/_3js",
+    "test_3js2": "npx electron --disable-gpu  ./test/_3js",
     "cmdbg": "npx electron --debug ./test/catchMouse"
   },
   "keywords": [
