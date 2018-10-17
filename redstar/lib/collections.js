@@ -1,0 +1,1 @@
+touchInfo = new Mongo.Collection('touchInfo');

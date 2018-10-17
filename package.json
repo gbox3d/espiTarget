@@ -10,7 +10,8 @@
     "cm_rasp": "npx electron --disable-gpu ./test/catchMouse",
     "test_3js": "npx electron --debug ./test/_3js",
     "test_3js2": "npx electron --disable-gpu  ./test/_3js",
-    "cmdbg": "npx electron --debug ./test/catchMouse"
+    "cmdbg": "npx electron --debug ./test/catchMouse",
+    "cter": "npx electron --debug ./runner/catcher"
   },
   "keywords": [
     "electron",
@@ -20,6 +21,7 @@
   "license": "ISC",
   "dependencies": {
     "electron": "^2.0.11",
+    "ip": "^1.1.5",
     "node-mouse": "0.0.2",
     "three": "^0.97.0"
   }
