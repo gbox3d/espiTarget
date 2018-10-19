@@ -1,17 +1,30 @@
 <template name="infoDevice">
   <div>Info device</div>
 
-  <div class="targetCanvas" style="position: absolute; background-color: burlywood;width: 512px;height: 512px">
+  <div class="targetCanvas" style="
+  position: absolute; background-color: burlywood;width: 512px;height: 512px">
 
+    <div class="spotRoot" style="position: absolute;transform: translate(-{{getConfigData.baseX}}px,-{{getConfigData.baseY}}px);" >
     {{#each getTouchInfo}}
-
       <div style="transform: translate({{x}}px,{{y}}px);position: absolute" >{{x}},{{y}}</div>
-
+      <div style="transform: translate({{x}}px,{{y}}px);position: absolute"  >
+        <div class="spot" style="transform: translate(-8px,-8px);position: absolute" ></div>
+      </div>
     {{/each }}
+
+    </div>
   </div>
 
   <div class="uiRoot" style="transform: translate(512px,0px);position: absolute" >
+
     <button class="actGameEnd" > End </button>
+
+    <div class="base">
+      <input class="X" value="{{getConfigData.baseX}}">
+      <input class="Y" value="{{getConfigData.baseY}}">
+      <button>적용</button>
+    </div>
+
   </div>
 
 </template>

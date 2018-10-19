@@ -23,6 +23,12 @@ __templete.onCreated(function () {
       console.log('observe remove ' + id)
     }
   })
+})
+
+__templete.onRendered(function () {
+
+
+
 
 })
 
@@ -36,11 +42,30 @@ __templete.events({
         console.log('success')
       }
     })
+  },
+  "click .base button"(evt,instance) {
+    Meteor.call('configData/update',
+      {
+        baseX : parseInt( instance.find(".base input.X").value ),
+        baseY :  parseInt( instance.find(".base input.Y").value)
+
+      },
+      function (err) {
+      if(err) {
+        console.log(err)
+      }
+      else {
+        console.log('success')
+      }
+    })
   }
 })
 
 __templete.helpers({
   getTouchInfo() {
     return touchInfo.find()
+  },
+  getConfigData() {
+    return configData.findOne({name:'config'})
   }
 })
